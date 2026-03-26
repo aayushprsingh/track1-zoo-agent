@@ -1,0 +1,16 @@
+# Zoo Guide Agent — Python Dependencies
+# Pinned versions for reproducibility
+# Install with: pip install -r requirements.txt
+
+# Agent framework
+google-adk==1.14.0
+
+# Wikipedia tool integration
+langchain-community==0.3.27
+wikipedia==1.4.0
+
+# Environment configuration
+python-dotenv==1.0.1
+
+# Google Cloud logging (for Cloud Run log integration)
+google-cloud-logging==4.2.1
