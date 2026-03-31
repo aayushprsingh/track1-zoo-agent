@@ -146,7 +146,7 @@ Write-Host "  This takes 5-10 minutes. Please wait...`n" -ForegroundColor Yellow
 Push-Location $PSScriptRoot
 
 try {
-    uvx --from google-adk==1.14.0 `
+    uvx --from google-adk==1.28.0 `
         adk deploy cloud_run `
         --project=$PROJECT_ID `
         --region=$REGION `

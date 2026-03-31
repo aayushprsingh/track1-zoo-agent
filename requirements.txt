@@ -3,7 +3,7 @@
 # Install with: pip install -r requirements.txt
 
 # Agent framework
-google-adk==1.14.0
+google-adk==1.28.0
 
 # Wikipedia tool integration
 langchain-community==0.3.27
@@ -13,4 +13,4 @@ wikipedia==1.4.0
 python-dotenv==1.0.1
 
 # Google Cloud logging (for Cloud Run log integration)
-google-cloud-logging==4.2.1
+google-cloud-logging==3.15.0

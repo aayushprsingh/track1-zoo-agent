@@ -1,0 +1,41 @@
+# Zoo Agent - ADK YAML Config
+# This is an alternative way to define the agent structure
+
+agent:
+  name: zoo_agent
+  model: gemini-2.5-flash
+  description: "Zoo Tour Guide - Question answering about animals via Wikipedia"
+
+root_agent: greeter
+
+agents:
+  - name: greeter
+    type: agent
+    model: gemini-2.5-flash
+    description: "Main entry point for Zoo Tour Guide"
+    instruction: |
+      You are the welcoming Zoo Tour Guide.
+      Greet users and invite them to ask about animals.
+    tools:
+      - add_prompt_to_state
+    sub_agents:
+      - tour_guide_workflow
+
+  - name: tour_guide_workflow
+    type: sequential_agent
+    description: "Research and format workflow"
+    sub_agents:
+      - comprehensive_researcher
+      - response_formatter
+
+  - name: comprehensive_researcher
+    type: agent
+    model: gemini-2.5-flash
+    description: "Research agent using Wikipedia"
+    tools:
+      - wikipedia
+
+  - name: response_formatter
+    type: agent
+    model: gemini-2.5-flash
+    description: "Format research into friendly response"

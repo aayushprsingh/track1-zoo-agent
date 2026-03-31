@@ -62,7 +62,7 @@ except Exception as e:
 logger = logging.getLogger(__name__)
 
 # Configuration from environment
-MODEL_NAME = os.getenv("MODEL", "gemini-2.5-flash")
+MODEL_NAME = "gemini-2.5-flash"  # Hardcoded to ensure deployment uses correct model
 WIKIPEDIA_LANG = os.getenv("WIKIPEDIA_LANG", "en")
 LOG_LEVEL = os.getenv("LOG_LEVEL", "INFO").upper()
 
